@@ -67,7 +67,7 @@ The preprocessing pipeline ensures consistency and improves model performance.
 - v0.3: Data augmentation strategies  
 - v0.4: Class-weighted loss tuning  
 - v0.5: SAM (Segment Anything Model) comparison  
-- v6.0: Training on full dataset (4000+ images)  
+- v1.0: Training on full dataset (4000+ images)  
 
 ---
 
