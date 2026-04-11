@@ -143,4 +143,4 @@ Divulge AI
 
 ## ⭐ Key Highlight
 
-This project follows a versioned experimental approach, progressively improving segmentation performance with increasing dataset size and refined preprocessing strategies, similar to real-world ML system development.z
+This project follows a versioned experimental approach, progressively improving segmentation performance with increasing dataset size and refined preprocessing strategies, similar to real-world ML system development.
