@@ -87,9 +87,6 @@ rvg-segmentation-unet/
 ```
 ---
 
-
----
-
 ## 📈 Training Strategy
 
 - Progressive dataset scaling  
