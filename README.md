@@ -88,8 +88,8 @@ pip install -r requirements.txt
 
 | Version | Notebook | Open |
 |--------|----------|------|
-| v0.1 | 500 Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10hVwpvi8G1vC5LiDQncKOqzPGMDOI3CX?usp=sharing) |
-| v0.2 | 1K Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Bk2S5pE_igilmZFoZDiYyG76J7U12ro5?usp=sharing) |
+| v0.1 | 500 Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Bk2S5pE_igilmZFoZDiYyG76J7U12ro5?usp=sharing) |
+| v0.2 | 1K Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10hVwpvi8G1vC5LiDQncKOqzPGMDOI3CX?usp=sharing) |
 | v0.3 | 3K Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1AmwJ96imPfmyIsTB6gzUeurZRfYIVugF?usp=sharing) |
 
 ---
