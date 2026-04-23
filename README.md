@@ -1,99 +1,121 @@
 # 🦷 RVG Segmentation using UNet
 
-## 📌 Problem Statement
-Dental RVG (Radiovisiography) images require precise pixel-level segmentation for identifying anatomical structures and lesions. Manual annotation is time-consuming and error-prone.
+<p align="center">
+  <img src="https://img.shields.io/badge/Task-Image%20Segmentation-blue" />
+  <img src="https://img.shields.io/badge/Model-UNet-green" />
+  <img src="https://img.shields.io/badge/Framework-PyTorch-red" />
+  <img src="https://img.shields.io/badge/Status-Active-success" />
+</p>
 
-This project aims to build a robust deep learning-based segmentation pipeline using UNet, improving performance across increasing dataset scales and preprocessing strategies.
+---
+
+## 📌 Overview
+
+Dental Radiovisiography (RVG) images require precise pixel-level segmentation to identify anatomical structures and pathological regions.
+
+This project builds a scalable UNet-based deep learning segmentation pipeline using a version-controlled experimental approach focused on dataset scaling, preprocessing, and model improvement.
 
 ---
 
 ## 📊 Dataset
 
-- **Total Images Available:** 4459  
-- **Image Type:** Grayscale Dental RVG scans  
-- **Task:** Image Segmentation  
+- Total Images: 4459  
+- Type: Grayscale Dental RVG scans  
+- Task: Binary Segmentation  
 
-### 📂 Dataset Usage by Version
-
-| Version | Dataset Size | Description |
-|--------|------------|-------------|
-| v0.1   | 375 images  | Initial baseline experiment |
-| v0.2   | 1047 images | Improved training with more data |
-| Future | 4000+ images | Scaling phase (ongoing) |
-
----
-
-## ⚙️ Data Preprocessing Pipeline
-
-The preprocessing pipeline ensures consistency and improves model performance.
-
-### Steps:
-- Resize images to **512 × 512**
-- Convert to grayscale (if required)
-- Normalize pixel values
-- Align and clean segmentation masks
-- Remove corrupt or inconsistent data
-- Apply augmentations (in later versions)
-
-### Files:
-- `Preprocessing.ipynb`
-- preprocessing scripts (planned modularization)
+| Version | Images | Description |
+|--------|--------|-------------|
+| v0.1   | 375    | Baseline experiment |
+| v0.2   | 1047   | Improved training |
+| v0.3   | 2953   | Large-scale training |
+| Future | 4000+  | Full dataset |
 
 ---
 
-## 🧠 Model Development (Versioned)
+## ⚙️ Preprocessing Pipeline
 
-### 🔹 v0.1 — Baseline UNet
-- Dataset: 375 images  
-- Standard UNet architecture  
-- Basic preprocessing  
-- No heavy augmentation  
-
-**Objective:** Establish baseline performance  
+- Resize to 512 × 512  
+- Normalize pixel values  
+- Clean and align masks  
+- Remove corrupted samples  
+- Split: 80% Train / 10% Val / 10% Test  
+- Progressive augmentation  
 
 ---
 
-### 🔹 v0.2 — Improved UNet
-- Dataset: 1047 images  
+## 🧠 Model Development
+
+### v0.1 — Baseline
+- Standard UNet  
+- Minimal preprocessing  
+- No augmentation  
+
+### v0.2 — Improved
 - Increased dataset size  
 - Improved training stability  
 - Initial class imbalance handling  
 
-**Objective:** Improve generalization  
+### v0.3 — Scaled Training
+- Dataset: 2953 images  
+- Split: 80 / 10 / 10  
+
+| Metric    | Score   |
+|-----------|--------|
+| Accuracy  | 0.7865 |
+| Precision | 0.7936 |
+| Recall    | 0.7865 |
+| F1 Score  | 0.7874 |
+| IoU       | 0.6757 |
 
 ---
 
-### 🔹 Upcoming Versions
-- v0.3: Data augmentation strategies  
-- v0.4: Class-weighted loss tuning  
-- v0.5: SAM (Segment Anything Model) comparison  
-- v1.0: Training on full dataset (4000+ images)  
+## 🚀 Quick Start
+
+### Clone Repository
+
+```bash
+git clone https://github.com/your-username/rvg-segmentation-unet.git
+cd rvg-segmentation-unet
+```
+## ⚙️ Installation
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+---
+## ▶️ Run on Google Colab
+
+| Version | Notebook | Open |
+|--------|----------|------|
+| v0.1 | 500 Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10hVwpvi8G1vC5LiDQncKOqzPGMDOI3CX?usp=sharing) |
+| v0.2 | 1K Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Bk2S5pE_igilmZFoZDiYyG76J7U12ro5?usp=sharing) |
+| v0.3 | 3K Images UNet Model | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1AmwJ96imPfmyIsTB6gzUeurZRfYIVugF?usp=sharing) |
+
+---
+## 💻 Run Locally
+
+```bash
+jupyter notebook
+```
+Open notebooks from the notebooks/ directory and update dataset paths accordingly.
 
 ---
 
 ## 📁 Project Structure
-```
+
+```bash
 rvg-segmentation-unet/
 │
-│
 ├── notebooks/
-│ ├── Preprocessing.ipynb
-│ ├── 500 Images Unet Model.ipynb
-│ └── 1k-images-unet.ipynb
-│
+│   ├── Preprocessing.ipynb
+│   ├── 500 Images Unet Model.ipynb
+│   ├── 1k-images-unet.ipynb
+│   └── 3K_Unet_Model.ipynb
 │
 ├── README.md
-└── requirements.txt 
+└── requirements.txt
 ```
----
-
-## 📈 Training Strategy
-
-- Progressive dataset scaling  
-- Iterative model improvements  
-- Validation-based monitoring  
-- Focus on improving generalization  
-
 ---
 
 ## 📊 Evaluation Metrics
@@ -102,42 +124,38 @@ rvg-segmentation-unet/
 - Intersection over Union (IoU)  
 - Precision  
 - Recall  
+- F1 Score  
 
 ---
 
-## 🚀 Future Work
+## 🚀 Roadmap
 
-- Integration with Segment Anything Model (SAM)  
+- Loss function optimization (Dice Loss, Focal Loss)  
+- Segment Anything Model (SAM) comparison  
 - Multi-class segmentation  
-- Advanced architectures (DeepLabV3, Attention UNet)  
+- Advanced architectures (Attention UNet, DeepLabV3+)  
 - Full dataset training  
-- Benchmarking across multiple models  
 
 ---
 
-## 🔗 Planned Extensions
-
-This project is part of a larger system:
-
-- UNet → Current repository  
-- SAM → Upcoming repository  
-- Benchmark → Comparative analysis across models  
-
----
-
-## ⚠️ Current Limitations
+## ⚠️ Limitations
 
 - Dataset still expanding  
+- Label noise present  
 - Limited augmentation in early versions  
-- Code not fully modular (work in progress)  
-- SAM integration pending  
+- Binary segmentation only  
 
 ---
 
 ## 👨‍💻 Author
-Divulge AI
+
+Divulge AI  
+
 ---
 
-## ⭐ Key Highlight
+## ⭐ Highlights
 
-This project follows a versioned experimental approach, progressively improving segmentation performance with increasing dataset size and refined preprocessing strategies, similar to real-world ML system development.
+- Version-controlled experimentation  
+- Scalable training pipeline  
+- Progressive dataset scaling  
+- Designed for medical image segmentation workflows  
